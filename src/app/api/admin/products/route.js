@@ -23,6 +23,8 @@ export async function POST(request) {
 
         const name = formData.get('name');
         const description = formData.get('description');
+        const category = formData.get('category');
+        const price = formData.get('price');
 
         const imageFiles = formData.getAll('images');
         const uploadedUrls = [];
@@ -46,6 +48,8 @@ export async function POST(request) {
         const product = await Product.create({
             name,
             description,
+            category,
+            price,
             images: uploadedUrls,
         });
 

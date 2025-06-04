@@ -55,9 +55,26 @@ export async function PUT(request, { params }) {
             );
         }
 
+        const priceInput = formData.get('price');
+        let price;
+        
+        if (priceInput && priceInput !== 'undefined') {
+            price = parseFloat(priceInput);
+            if (isNaN(price)) {
+                return NextResponse.json(
+                    { success: false, error: 'Invalid price format' },
+                    { status: 400 }
+                );
+            }
+        } else {
+            price = existingProduct.price;
+        }
+
         const updateData = {
             name: formData.get('name') || existingProduct.name,
             description: formData.get('description') || existingProduct.description,
+            category: formData.get('category') || existingProduct.category,
+            price: price,
             updatedAt: new Date(),
         };
 
@@ -93,6 +110,7 @@ export async function PUT(request, { params }) {
         return NextResponse.json({ success: true, data: updatedProduct });
 
     } catch (error) {
+        console.error('Error in PUT : ', error);
         return NextResponse.json(
             { success: false, error: error.message },
             { status: 500 }
