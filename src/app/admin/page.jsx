@@ -269,8 +269,8 @@ export default function AdminPanel() {
     <div className="min-h-screen bg-white">
       <div className="bg-white border-b border-gray-100 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl font-bold text-gray-900">Admin</h1>
+          <div className="flex justify-end items-center h-16">
+           
             <button
               onClick={() => setShowAddModal(true)}
               className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg flex items-center gap-2 font-semibold transition-colors"
@@ -373,11 +373,11 @@ export default function AdminPanel() {
 
                   </div>
                   <div className="">
-                    <button type="button" className='cursor-pointer text-red-800'
+                    <button type="button" className='cursor-pointer text-red-500 p-1 border border-red-500 rounded-lg'
                       onClick={(e) => {
                         e.stopPropagation();
                         handleDelete(product._id);
-                      }}><Trash2 className='h-5 w-5' /></button>
+                      }}><Trash2 className='h-6 w-6' /></button>
                   </div>
                 </div>
               </div>
