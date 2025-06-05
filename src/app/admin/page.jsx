@@ -373,7 +373,7 @@ export default function AdminPanel() {
 
                   </div>
                   <div className="">
-                    <button type="button" className='cursor-pointer text-red-500 p-1 border border-red-500 rounded-lg'
+                    <button type="button" className='cursor-pointer text-red-500 p-2 bg-gray-200 hover:bg-gray-300 rounded-lg'
                       onClick={(e) => {
                         e.stopPropagation();
                         handleDelete(product._id);
