@@ -1,8 +1,13 @@
+import Aboutus from '@/components/Aboutus'
+import ContactUs from '@/components/ContactUs'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>main </div>
+    <div>
+      <Aboutus />
+      <ContactUs />
+    </div>
   )
 }
 
